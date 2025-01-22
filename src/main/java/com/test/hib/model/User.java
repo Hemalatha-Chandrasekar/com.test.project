@@ -1,22 +1,23 @@
-package com.hema.hib.model;
+package com.test.hib.model;
 
 import jakarta.persistence.*;
 
+//import javax.persistence.*;
+
 @Entity
 @Table(name = "USER")
-
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "USER_ID")
     private Integer id;
-
     private String fullname;
     private String email;
     private String password;
     private int age;
     private double salary;
     private String city;
+
 
     public User() {}
 
@@ -29,28 +30,12 @@ public class User {
         this.city = city;
     }
 
-    public int getAge() {
-        return age;
+    public Integer getId() {
+        return id;
     }
 
-    public void setAge(int age) {
-        this.age = age;
-    }
-
-    public String getCity() {
-        return city;
-    }
-
-    public void setCity(String city) {
-        this.city = city;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public String getFullname() {
@@ -61,12 +46,12 @@ public class User {
         this.fullname = fullname;
     }
 
-    public Integer getId() {
-        return id;
+    public String getEmail() {
+        return email;
     }
 
-    public void setId(Integer id) {
-        this.id = id;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public String getPassword() {
@@ -77,6 +62,14 @@ public class User {
         this.password = password;
     }
 
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
     public double getSalary() {
         return salary;
     }
@@ -85,16 +78,11 @@ public class User {
         this.salary = salary;
     }
 
-    @Override
-    public String toString() {
-        return "User{" +
-                "age=" + age +
-                ", id=" + id +
-                ", fullname='" + fullname + '\'' +
-                ", email='" + email + '\'' +
-                ", password='" + password + '\'' +
-                ", salary=" + salary +
-                ", city='" + city + '\'' +
-                '}';
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
     }
 }
